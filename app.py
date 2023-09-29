@@ -12,11 +12,11 @@ PAGES = {
     "Classify Image": classifyPage
 }
 
-st.sidebar.title("Deforgify")
+st.sidebar.title("SAFIRE")
 
-st.sidebar.write("Deforgify is a tool that utilizes the power of Deep Learning to distinguish Real images from the Fake ones.")
+st.sidebar.write("SAFIRE is a tool that utilizes the power of Deep Learning to distinguish Real images from the Fake ones.")
 
-st.sidebar.subheader('Navigation:')
+st.sidebar.subheader('Navigation')
 selection = st.sidebar.radio("", list(PAGES.keys()))
 
 page = PAGES[selection]
