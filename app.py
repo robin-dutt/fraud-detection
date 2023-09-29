@@ -28,5 +28,5 @@ if st.sidebar.button(f"{dashboard_icon} Dashboard"):
     page.app()
 
 if st.sidebar.button(f"{classify_icon} Classify Image"):
-    page = PAGES[Classify Image]
+    page = PAGES['Classify Image']
     page.app()
