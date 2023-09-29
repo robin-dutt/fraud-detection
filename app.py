@@ -17,8 +17,16 @@ st.sidebar.title("SAFIRE")
 st.sidebar.write("SAFIRE is a tool that utilizes the power of Deep Learning to distinguish Real images from the Fake ones.")
 
 st.sidebar.subheader('Navigation')
-selection = st.sidebar.radio("", list(PAGES.keys()))
 
-page = PAGES[selection]
+# Define icons for the buttons
+dashboard_icon = "📊"
+classify_icon = "🖼️"
 
-page.app()
+# Use HTML to include icons with the buttons
+if st.sidebar.button(f"{dashboard_icon} Dashboard"):
+    page = PAGES["Dashboard"]
+    page.app()
+
+if st.sidebar.button(f"{classify_icon} Classify Image"):
+    page = PAGES["Classify Image"]
+    page.app()
