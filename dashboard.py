@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.express as px
 
 def app():
-    st.image('./Streamlit_UI/Header.gif', use_column_width=True)
+    st.image('./Header.gif', use_column_width=True)
 
     st.subheader("💡 Abstract:")
 
@@ -40,12 +40,12 @@ def app():
 
     st.write('The "fake" faces collected in this dataset are generated using the StyleGAN2, which present a harder challenge to classify them correctly even for the human eye.')
 
-    st.image('./Streamlit_UI/faces_1.png', use_column_width=True)
-    st.image('./Streamlit_UI/faces_2.png', use_column_width=True)
+    st.image('./faces_1.png', use_column_width=True)
+    st.image('./faces_2.png', use_column_width=True)
 
     st.subheader("⚙️ Model Architecture")
 
-    st.image('./Streamlit_UI/model.png', use_column_width=True)
+    st.image('./model.png', use_column_width=True)
 
     ml_process = f'''
 - We designed a Sequential Model having 5 Convolutional Layers and 4 Dense Layers.
@@ -66,8 +66,8 @@ def app():
     '''
     loss, buff, acc = st.columns([2, 0.4, 2])
 
-    loss.image('./Streamlit_UI/loss.png', use_column_width=True)
-    acc.image('./Streamlit_UI/accuracy.png', use_column_width=True)
+    loss.image('./loss.png', use_column_width=True)
+    acc.image('./accuracy.png', use_column_width=True)
 
     st.subheader("📈 Results")
     st.markdown(results, unsafe_allow_html=True)
