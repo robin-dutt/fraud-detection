@@ -15,7 +15,7 @@ PAGES = {
     "Classify Image": {"page": classifyPage, "icon": "🖼️"}
 }
 
-# Sidebar styling using custom CSS
+# Sidebar styling
 st.sidebar.title("SAFIRE")
 st.sidebar.markdown("SAFIRE is a tool that utilizes the power of Deep Learning to distinguish Real images from the Fake ones.")
 st.sidebar.subheader('Navigation')
@@ -25,21 +25,6 @@ selection = st.sidebar.radio("", list(PAGES.keys()), format_func=lambda page_nam
 
 # Get the selected page and its corresponding icon
 selected_page = PAGES[selection]['page']
-
-# Apply custom CSS styles
-custom_css = """
-<style>
-.sidebar .sidebar-content {
-    background-color: #f8f9fa; /* Background color */
-    padding: 20px; /* Padding inside the sidebar */
-    border-radius: 10px; /* Rounded corners */
-}
-.sidebar .sidebar-content .sidebar-radio {
-    margin-top: 10px; /* Margin between radio buttons */
-}
-</style>
-"""
-st.markdown(custom_css, unsafe_allow_html=True)
 
 # Display the selected page
 selected_page.app()
