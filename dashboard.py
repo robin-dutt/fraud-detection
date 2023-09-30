@@ -40,8 +40,8 @@ def app():
 
     st.write('The dataset for this project is the CASIA v2 Image tempering detection dataset which can be found <a href="https://www.kaggle.com/datasets/divg07/casia-20-image-tampering-detection-dataset"> here </a> on kaggle.  ')
 
-    st.image('./download (1)', use_column_width=True)
-    st.image('./download (2)', use_column_width=True)
+    st.image('./download (1).png', use_column_width=True)
+    st.image('./download (2).png', use_column_width=True)
     
     st.subheader("⚙️ Model Architecture")
 
