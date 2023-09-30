@@ -42,9 +42,30 @@ def app():
 
     st.image('./download (1).png', use_column_width=True)
     st.image('./download (2).png', use_column_width=True)
-    
+    st.subheader("🖼️CREATING ELA IMAGES FROM THE AUTHENTIC AND TEMPERED IMAGES")
+    st.image("'./download (3).png', use_column_width=True)
+    st.write('ELA helps identify tampered regions in an image, while CNN is trained to classify images as real or fake.')
     st.subheader("⚙️ Model Architecture")
+    st.subheader("Metadata-Based Classifier: Extraction of metadata from images and build a metadata-based classifier using Random Forest.")
+    st.sidebar.title("Metadata-Based Image Classifier")
+   import streamlit as st
 
+    metadata = {
+        "ImageWidth": [image.width],
+        "ImageLength": [image.height],
+        "DateTimeOriginal": ["2023-09-30 12:00:00"],
+        "Make": ["Canon"],
+        "Model": ["EOS Rebel T7i"],
+        "Software": ["Adobe Photoshop"],
+    }
+
+    # Convert the metadata dictionary into a DataFrame
+    import pandas as pd
+    metadata_df = pd.DataFrame(metadata)
+
+    # Display the metadata table
+    st.table(metadata_df)
+    st.write("Accuracy of metadata classifier:60.60%")
     st.image('./model.png', use_column_width=True)
     
     ml_process = f'''
