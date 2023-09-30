@@ -2,6 +2,23 @@ import streamlit as st
 import dashboard
 import classifyPage
 
+# Add custom CSS to style the sidebar
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #f8f9fa; /* Background color */
+        padding: 20px; /* Padding inside the sidebar */
+        border-radius: 10px; /* Rounded corners */
+    }
+    .sidebar .sidebar-content .sidebar-radio {
+        margin-top: 10px; /* Margin between radio buttons */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Set Streamlit page configuration
 st.set_page_config(
     page_title="Deforgify",
@@ -28,19 +45,3 @@ selected_page = PAGES[selection]['page']
 
 # Display the selected page
 selected_page.app()
-# Add custom CSS to style the sidebar
-st.markdown(
-    """
-    <style>
-    .sidebar .sidebar-content {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .sidebar .sidebar-content .sidebar-radio {
-        margin-top: 10px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
