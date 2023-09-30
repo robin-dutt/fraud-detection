@@ -25,11 +25,6 @@ st.write("""
 """)
 # Display footer image
 footer_image_path = './images.png'
-st.image(footer_image_path, caption="scit", width=1000)
+st.image(footer_image_path, caption="scit", width=100)
 
-# Add the footer to your app with an image
-footer_content = """
-<div class="footer">Your footer content goes here</div>
 
-"""
-st.markdown(footer_content, unsafe_allow_html=True)
