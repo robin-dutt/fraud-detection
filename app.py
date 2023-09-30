@@ -28,3 +28,19 @@ selected_page = PAGES[selection]['page']
 
 # Display the selected page
 selected_page.app()
+# Add custom CSS to style the sidebar
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .sidebar .sidebar-content .sidebar-radio {
+        margin-top: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
