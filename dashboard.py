@@ -43,7 +43,7 @@ def app():
     st.image('./download (1).png', use_column_width=True)
     st.image('./download (2).png', use_column_width=True)
     st.subheader("🖼️CREATING ELA IMAGES FROM THE AUTHENTIC AND TEMPERED IMAGES")
-    st.image('./download (3).png', use_column_width=True')
+    st.image('./download (3).png', use_column_width=True)
     st.write('ELA helps identify tampered regions in an image, while CNN is trained to classify images as real or fake.')
     st.subheader("⚙️ Model Architecture")
     st.subheader("Metadata-Based Classifier: Extraction of metadata from images and build a metadata-based classifier using Random Forest.")
