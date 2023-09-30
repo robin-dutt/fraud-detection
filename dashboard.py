@@ -60,7 +60,9 @@ def app():
 '''
     st.write(ml_process)
     st.image('./download.png', use_column_width=True)
-    
+    results = f'''
+    - The model with least Validation Loss was saved during the training and reloaded before obtaining the final results.
+    '''
     st.subheader("📈 Results")
     st.markdown(results, unsafe_allow_html=True)
 
