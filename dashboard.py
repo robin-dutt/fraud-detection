@@ -49,8 +49,8 @@ def app():
     st.subheader("Metadata-Based Classifier: Extraction of metadata from images and build a metadata-based classifier using Random Forest.")
     st.sidebar.title("Metadata-Based Image Classifier")
     metadata = {
-        "ImageWidth": [image.width],
-        "ImageLength": [image.height],
+        "ImageWidth": [200],
+        "ImageLength": [200],
         "DateTimeOriginal": ["2023-09-30 12:00:00"],
         "Make": ["Canon"],
         "Model": ["EOS Rebel T7i"],
