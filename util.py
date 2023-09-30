@@ -24,7 +24,7 @@ def classify_image(file_path):
 
     result = {
         'label': label,
-        'probablity': probab
+        'probability': probab
     }
 
     return result
