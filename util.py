@@ -7,7 +7,7 @@ labels = ['real', 'fake']
 
 def load_model():
     global model
-    model = tf.keras.models.load_model('/model.h5')
+    model = tf.keras.models.load_model('./fakevsreal_weights.h5')
 
 def classify_image(file_path):
     if model is None:
