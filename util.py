@@ -19,7 +19,7 @@ def classify_image(file_path):
     img = np.asarray(image) # converting it to numpy array
     img = np.expand_dims(img, 0)
     predictions = model.predict(img) # predicting the label
-    label = labels[np.argmax(predictions[0])] # extracting the label with maximum probablity
+    label = labels[np.argmax(predictions[0])] # extracting the label with maximum probability
     probab = float(round(predictions[0][np.argmax(predictions[0])]*100, 2))
 
     result = {
@@ -28,3 +28,4 @@ def classify_image(file_path):
     }
 
     return result
+
