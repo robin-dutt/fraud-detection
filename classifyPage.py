@@ -14,10 +14,7 @@ def app():
         c2.write("The image is classified as **{}**.".format(res['label'].title()))
         c3.subheader("Probability")
         c3.write("Probability of being **{}**: {:.2f}%".format(res['label'].title(), res['probability']))
-
-if __name__ == "__main__":
-    app()
-st.write("""
+    st.write("""
     ### About this App
     This web application uses a machine learning model to classify images as fake or real. It's part of a project aimed at detecting manipulated or generated images to combat misinformation.
 
@@ -25,6 +22,4 @@ st.write("""
 """)
 # Display footer image
 footer_image_path = './images.png'
-st.image(footer_image_path, caption="scit", width=100)
-
-
+st.image(footer_image_path, caption="scit", width=500)
