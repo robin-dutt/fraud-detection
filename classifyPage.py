@@ -20,6 +20,6 @@ def app():
 
     Feel free to navigate between pages, upload images, and explore the app!
 """)
-# Display footer image
-footer_image_path = './images.png'
-st.image(footer_image_path, caption="scit", width=500)
+    # Display footer image
+    footer_image_path = './images.png'
+    st.image(footer_image_path, caption="scit", width=500)
