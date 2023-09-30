@@ -48,8 +48,6 @@ def app():
     st.subheader("⚙️ Model Architecture")
     st.subheader("Metadata-Based Classifier: Extraction of metadata from images and build a metadata-based classifier using Random Forest.")
     st.sidebar.title("Metadata-Based Image Classifier")
-    import streamlit as st
-
     metadata = {
         "ImageWidth": [image.width],
         "ImageLength": [image.height],
