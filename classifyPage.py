@@ -22,4 +22,4 @@ def app():
 """)
     # Display footer image
     footer_image_path = './images.png'
-    st.image(footer_image_path, caption="scit", width=500)
+    st.image(footer_image_path, caption="scit", width=800)
