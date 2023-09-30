@@ -48,27 +48,26 @@ def app():
     st.subheader("⚙️ Model Architecture")
     st.subheader("Metadata-Based Classifier: Extraction of metadata from images and build a metadata-based classifier using Random Forest.")
     st.sidebar.title("Metadata-Based Image Classifier")
-   import streamlit as st
+   
 
-    metadata = {
+     metadata = {
         "ImageWidth": [image.width],
         "ImageLength": [image.height],
         "DateTimeOriginal": ["2023-09-30 12:00:00"],
         "Make": ["Canon"],
         "Model": ["EOS Rebel T7i"],
         "Software": ["Adobe Photoshop"],
-    }
+     }
+     # Convert the metadata dictionary into a DataFrame
+     import pandas as pd
+     metadata_df = pd.DataFrame(metadata)
 
-    # Convert the metadata dictionary into a DataFrame
-    import pandas as pd
-    metadata_df = pd.DataFrame(metadata)
-
-    # Display the metadata table
-    st.table(metadata_df)
-    st.write("Accuracy of metadata classifier:60.60%")
-    st.image('./model.png', use_column_width=True)
+     # Display the metadata table
+     st.table(metadata_df)
+     st.write("Accuracy of metadata classifier:60.60%")
+     st.image('./model.png', use_column_width=True)
     
-    ml_process = f'''
+     ml_process = f'''
 - We designed a Sequential Model having 5 Convolutional Layers and 4 Dense Layers.
 - The first layer started with 32 filters and kernel of 2x2.
 - The number of filters are doubled at every next layer and kernel is is incremented by 1.
@@ -79,27 +78,26 @@ def app():
 - We used ReLU activation in all layers except output layer to reduce computation cost and introduce non-linearity.
 - Finally the Output Layer was constructed containing 2 neurons (1 for each class) and softmax activation.
 '''
-    st.write(ml_process)
-    st.image('./download.png', use_column_width=True)
-    results = f'''
-    - The model with least Validation Loss was saved during the training and reloaded before obtaining the final results.
-    '''
-    st.subheader("📈 Results")
-    st.markdown(results, unsafe_allow_html=True)
+     st.write(ml_process)
+     st.image('./download.png', use_column_width=True)
+     results = f'''
+     - The model with least Validation Loss was saved during the training and reloaded before obtaining the final results.
+     '''
+     st.subheader("📈 Results")
+     st.markdown(results, unsafe_allow_html=True)
 
-    st.write("For our applicaton usecase, We would want the application to perform equally great at both precision and recall. We would want it to attempt to identify all the tempered images while still reducing the errors of classifying authentic images as tempered. Hence, accuracy is a great metric for us. From the training we are able to achieve an accuracy of between 96 and 98% on training dataset and between 90 and 92% on test dataset.")
+     st.write("For our applicaton usecase, We would want the application to perform equally great at both precision and recall. We would want it to attempt to identify all the tempered images while still reducing the errors of classifying authentic images as tempered. Hence, accuracy is a great metric for us. From the training we are able to achieve an accuracy of between 96 and 98% on training dataset and between 90 and 92% on test dataset.")
     
     
-    st.write(" ")
+     st.write(" ")
 
-    st.write("*Try it out now by clicking on Classify Image button on the Sidebar*")
-    st.write("""
-    ### About this App
-    This web application uses a machine learning model to classify images as fake or real. It's part of a project aimed at detecting manipulated or generated images to combat misinformation.
-
-    Feel free to navigate between pages, upload images, and explore the app!
-""")
-    # Display footer image
-    footer_image_path = './images.png'
-    st.image(footer_image_path, caption="scit", width=800)
+     st.write("*Try it out now by clicking on Classify Image button on the Sidebar*")
+     st.write("""
+     ### About this App
+     This web application uses a machine learning model to classify images as fake or real. It's part of a project aimed at detecting manipulated or generated images to combat misinformation.
+     Feel free to navigate between pages, upload images, and explore the app!
+ """)
+     # Display footer image
+     footer_image_path = './images.png'
+     st.image(footer_image_path, caption="scit", width=800)
     
