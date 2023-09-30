@@ -4,11 +4,16 @@ import util
 def app():
     st.image('./Untitled design (1).gif', use_column_width=True)
     st.write("Upload a Picture to see if it is a fake or real face.")
-    st.markdown('*Need a image to test? Visit this [link]("https://www.kaggle.com/datasets/awsaf49/artifact-dataset")*')
+    st.markdown('*Need an image to test? Visit this [link]("https://www.kaggle.com/datasets/awsaf49/artifact-dataset")*')
     file_uploaded = st.file_uploader("Choose the Image File", type=["jpg", "png", "jpeg"])
     if file_uploaded is not None:
         res = util.classify_image(file_uploaded)
-        c1, buff, c2 = st.columns([2, 0.5, 2])
+        c1, buff, c2, c3 = st.columns([2, 0.5, 2, 2])
         c1.image(file_uploaded, use_column_width=True)
         c2.subheader("Classification Result")
         c2.write("The image is classified as **{}**.".format(res['label'].title()))
+        c3.subheader("Probability")
+        c3.write("Probability of being **{}**: {:.2f}%".format(res['label'].title(), res['probability']))
+
+if __name__ == "__main__":
+    app()
