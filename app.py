@@ -4,7 +4,7 @@ import classifyPage
 
 # Set Streamlit page configuration
 st.set_page_config(
-    page_title="Deforgify",
+    page_title="SAFIRE",
     page_icon="🤖",
     layout="wide"
 )
@@ -16,6 +16,8 @@ PAGES = {
 }
 
 # Sidebar styling
+# Add logo to the sidebar
+st.sidebar.image('./LOGO.png', use_column_width=True)
 st.sidebar.title("SAFIRE")
 st.sidebar.markdown("SAFIRE is a tool that utilizes the power of Deep Learning to distinguish Real images from the Fake ones.")
 st.sidebar.subheader('Navigation')
