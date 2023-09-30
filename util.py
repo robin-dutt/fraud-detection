@@ -13,18 +13,18 @@ def classify_image(file_path):
     if model is None:
         load_model()
 
-    image = Image.open(file_path) # reading the image
-    image = image.resize((128, 128)) # resizing the image to fit the trained model
-    image = image.convert("RGB") # converting the image to RGB
-    img = np.asarray(image) # converting it to numpy array
+    image = Image.open(file_path)
+    image = image.resize((128, 128))
+    image = image.convert("RGB")
+    img = np.asarray(image)
     img = np.expand_dims(img, 0)
-    predictions = model.predict(img) # predicting the label
-    label = labels[np.argmax(predictions[0])] # extracting the label with maximum probablity
-    probab = float(round(predictions[0][np.argmax(predictions[0])]*100, 2))
+    predictions = model.predict(img)
+    label = labels[np.argmax(predictions[0])]
+    probab = float(round(predictions[0][np.argmax(predictions[0])] * 100, 2))
 
     result = {
         'label': label,
-        'probablity': probab
+        'probability': probab  # Include probability in the result
     }
 
     return result
