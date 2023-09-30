@@ -17,3 +17,19 @@ def app():
 
 if __name__ == "__main__":
     app()
+st.write("""
+    ### About this App
+    This web application uses a machine learning model to classify images as fake or real. It's part of a project aimed at detecting manipulated or generated images to combat misinformation.
+
+    Feel free to navigate between pages, upload images, and explore the app!
+""")
+# Display footer image
+footer_image_path = './images.png'
+st.image(footer_image_path, caption="scit", width=1000)
+
+# Add the footer to your app with an image
+footer_content = """
+<div class="footer">Your footer content goes here</div>
+
+"""
+st.markdown(footer_content, unsafe_allow_html=True)
