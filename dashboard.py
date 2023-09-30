@@ -28,25 +28,25 @@ def app():
 
     stats.markdown("<h5> 📊 Getting the Data and EDA Process </h5>", unsafe_allow_html=True)
 
-    stats.markdown("*The dataset was taken from Kaggle and you can find it [here](https://www.kaggle.com/hamzaboulahia/hardfakevsrealfaces).*")
+    stats.markdown("*The dataset was taken from Kaggle and you can find it [here](https://www.kaggle.com/datasets/sophatvathana/casia-dataset).*")
 
-    stats.markdown('''The Dataset contains 1288 faces out of which
-    <li> 589 are Real </li> 
-    <li> 700 are Fake </li>
+    stats.markdown('''The dataset for this project is the CASIA v2 Image tempering detection dataset
+    <li> 7492 Authentic images </li> 
+    <li> 5125 Tempered images </li>
     ''', unsafe_allow_html=True) 
 
-    fig = px.bar(x=['Real', 'Fake'], y=[589, 700], height=400)
+    fig = px.bar(x=['Real', 'Fake'], y=[7492, 5125], height=400)
     graph.plotly_chart(fig, use_container_width=True)
 
-    st.write('The "fake" faces collected in this dataset are generated using the StyleGAN2, which present a harder challenge to classify them correctly even for the human eye.')
+    st.write('The dataset for this project is the CASIA v2 Image tempering detection dataset which can be found <a href="https://www.kaggle.com/datasets/divg07/casia-20-image-tampering-detection-dataset"> here </a> on kaggle.  ')
 
-    st.image('./faces_1.png', use_column_width=True)
-    st.image('./faces_2.png', use_column_width=True)
-
+    st.image('./download (1)', use_column_width=True)
+    st.image('./download (2)', use_column_width=True)
+    
     st.subheader("⚙️ Model Architecture")
 
     st.image('./model.png', use_column_width=True)
-
+    
     ml_process = f'''
 - We designed a Sequential Model having 5 Convolutional Layers and 4 Dense Layers.
 - The first layer started with 32 filters and kernel of 2x2.
@@ -59,16 +59,8 @@ def app():
 - Finally the Output Layer was constructed containing 2 neurons (1 for each class) and softmax activation.
 '''
     st.write(ml_process)
-
-    results = f'''
-    - The model with least Validation Loss was saved during the training and reloaded before obtaining the final results.
-    - The model was able to classify all of the samples correctly.
-    '''
-    loss, buff, acc = st.columns([2, 0.4, 2])
-
-    loss.image('./loss.png', use_column_width=True)
-    acc.image('./accuracy.png', use_column_width=True)
-
+    st.image('./download.png', use_column_width=True)
+    
     st.subheader("📈 Results")
     st.markdown(results, unsafe_allow_html=True)
 
