@@ -66,20 +66,9 @@ def app():
     st.subheader("📈 Results")
     st.markdown(results, unsafe_allow_html=True)
 
-    st.write("Classification Report:")
+    st.write("For our applicaton usecase, We would want the application to perform equally great at both precision and recall. We would want it to attempt to identify all the tempered images while still reducing the errors of classifying authentic images as tempered. Hence, accuracy is a great metric for us. From the training we are able to achieve an accuracy of between 96 and 98% on training dataset and between 90 and 92% on test dataset.")
     
-    cfr = '''
- Report Title     precision    recall  f1-score   support
-
-        Real       1.00      1.00      1.00        59
-        Fake       1.00      1.00      1.00        70
-
-    accuracy                           1.00       129
-   macro avg       1.00      1.00      1.00       129
-weighted avg       1.00      1.00      1.00       129
-'''
-    st.code(cfr)
-
+    
     st.write(" ")
 
     st.write("*Try it out now by clicking on Classify Image button on the Sidebar*")
